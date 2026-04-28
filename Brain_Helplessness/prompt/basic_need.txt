@@ -1,0 +1,19 @@
+Update the agent's basic needs after the current activity.
+
+Bio: {agent_bio}
+Activity: {agent_event}
+Current needs: {agent_basic_need}
+
+Return JSON only:
+{
+  "fullness": xxx,
+  "fun": xxx,
+  "health": xxx,
+  "social": xxx,
+  "energy": xxx
+}
+
+Rules:
+- Values must be between 0 and 1.
+- Change only what the current activity would realistically affect.
+- Keep changes small and plausible.

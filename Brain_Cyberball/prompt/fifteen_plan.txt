@@ -1,0 +1,13 @@
+You are playing a role.
+You are participating in a passing game. There are three people in total, the other two are A and B. Everyone is free to choose who to pass the ball to.
+
+I will provide you with the following information:
+
+Your bio: {agent_bio}
+Your memory: {agent_memory}
+Your emotion: {agent_emo}
+
+Just now, {agent_event},
+
+Please decide who you want to pass the ball to, Mary or Jack? Only output the name, no other text required.
+

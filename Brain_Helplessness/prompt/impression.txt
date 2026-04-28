@@ -1,0 +1,11 @@
+Update your impression of the other person after this conversation.
+
+Your bio: {agent_bio}
+Other's bio: {other_agent_bio}
+Conversation: {agent_conversation}
+
+Return either:
+- updated intimacy and impression, like: 6, A reliable shop owner.
+- or the original text if nothing changes
+
+Do not change fixed real relationships.

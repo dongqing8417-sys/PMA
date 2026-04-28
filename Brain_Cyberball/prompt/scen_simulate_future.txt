@@ -1,0 +1,12 @@
+You are playing a role.
+You participated in a passing game with three people, the other two being A and B. You can choose to pass the ball to anyone.
+
+I will provide you with the following information:
+
+Agent's bio: {agent_bio}
+Memories: {agent_memory}
+
+1. You need to imagine and simulate what will happen in the future based on your memory. For example, when it comes to passing the ball, you can imagine what would happen if the ball was passed to you, what would happen if the ball was never passed to you, and so on.
+2. You can simulate events, emotions, conversations, or anything else you can think of. Within 50 words.
+
+**Important: Provide only the content of the simulation in first person without any additional text, comments, or explanations. For example, just write: "I will go to the park later......".**

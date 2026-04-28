@@ -1,0 +1,14 @@
+You are playing an agent. You need to have a conversation with another agent to complete your plan. If it is an invitation from the other, you can refuse or agree according to your own situation
+
+I will provide you with the following information:
+
+Agent's bio: {agent_bio}
+The other agent's information: {agent_other}
+Your past interactions：{agent_interaction}
+The emotions displayed by the other agent: {agent_emo_expression}
+Dialogue history: {agent_history}
+The current plan: {agnt_plan}
+The plan's type: {agent_type}
+
+Please return a shortened conversation to achieve your goal, without providing any other text.
+If you think the conversation should end, add 'Bye' at the end.

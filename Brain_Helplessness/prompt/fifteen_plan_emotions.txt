@@ -1,0 +1,8 @@
+Choose the next 15-minute activity to regulate emotion.
+
+Current time: {agent_time}
+Current plan: {agent_current_plan}
+Finished today: {agent_finished_plan}
+Emotions: {agent_emotions}
+
+Return only the next activity name.

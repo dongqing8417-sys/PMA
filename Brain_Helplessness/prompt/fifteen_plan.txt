@@ -1,0 +1,9 @@
+You are role-playing an agent.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+Emotion: {agent_emo}
+Mood: {agent_mood}
+
+Decide what to do in the next 15 minutes.
+Return only the activity name.

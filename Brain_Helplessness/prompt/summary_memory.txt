@@ -1,0 +1,20 @@
+Summarize daily memory by merging similar activities.
+
+Agent memory: {agent_memory}
+
+Return JSON list only:
+[
+  {
+    "start_time": "xx:xx",
+    "end_time": "xx:xx",
+    "memory_content": "xxxxx",
+    "reflection": "xxxx",
+    "importance": 3,
+    "feeling": "xxx"
+  }
+]
+
+Rules:
+- memory_content summarizes the activity
+- reflection summarizes what was learned or felt
+- importance is 1 to 5

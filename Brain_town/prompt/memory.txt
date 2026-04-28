@@ -1,0 +1,20 @@
+You are playing a role, then you should decide the memory's type, importance, and feeling. I will give you the following information:
+
+    Your bio: {agent_bio}
+    The event that occurred: {agent_event}
+
+You must follow the following criteria:
+
+You should tell me only in format as follows:
+
+{
+    "type": "XXX",
+    "importance": XXX,
+    "feeling": "XXX"
+}
+
+1. Specify the type of the event (choose one from the following: day_plan, 15_minute_plan, conversation, other agent, activity, thought, goal).
+2. Assess the importance of the event (maximum of 5 points).
+3. Describe your feeling about the event (only a few words).
+
+**Important: Provide only the file in format (such as '{"type": "activity", "importance": 3, "feeling": "relaxed"}') without any additional text or comments.**

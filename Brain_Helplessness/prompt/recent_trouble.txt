@@ -1,0 +1,14 @@
+Choose the single most important recent concern from memory and classify it.
+
+Memory: {agent_memory}
+
+Categories:
+1 = past or future event
+2 = self-related reflection
+3 = creativity or other matters
+
+Return JSON only:
+{
+  "Event": "xxx",
+  "Category": "x"
+}

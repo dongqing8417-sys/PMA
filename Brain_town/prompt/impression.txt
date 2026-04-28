@@ -1,0 +1,12 @@
+You are playing the role of a person who has just completed a conversation with another person.
+I will provide you with the following information:
+
+Your bio: {agent_bio}
+Other's bio: {other_agent_bio}
+Conversation：{agent_conversation}
+
+Based on the conversation, determine whether your impression and intimacy level (range 0-10) of the other person have changed.
+If they have changed, return the updated text, with the intimacy level and impression separated by a comma, for example, '6, A reliable shop owner. I often purchase ingredients from his store.'
+If there is no change, return the original text.
+Note that real relationships cannot be modified, for example, brothers cannot be turned into friends.
+No additional content is needed.

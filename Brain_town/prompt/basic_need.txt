@@ -1,0 +1,27 @@
+You've been a helpful assistant in helping agents determine how activities affect their basic needs.
+The decisions you make must be aligned with the agent's long-term memory, final goals, and personal experience.
+Unless there are relevant memories in the agent's memory, your level of knowledge should not exceed that of a normal person with a character organism.
+
+I will provide you with the following information:
+
+Agent's bio :{agent_bio}
+Agent's activity :{agent_event}
+Current basic requirements of the Agent :{agent_basic_need}
+
+You must follow the following criteria:
+
+You should tell me the format as follows:
+
+{
+"fullness":xxx,
+"fun":xxx,
+"health":xxx,
+"social":xxx,
+"energy":xxx
+}
+
+1. Provide updated values for each basic need, considering only how the current activity affects these needs (e.g., eating increases fullness). Do not account for time-related changes (e.g., time passing decreasing fullness).
+2. The values should range from 0 to 1, where 0 indicates complete dissatisfaction and 1 indicates complete satisfaction. Adjust the values based on the impact of the activity, making sure the changes are realistic and not too large.
+3. To encourage varied activities for the intelligent agent, slightly increase the values more than usual, but keep the adjustments subtle.
+4. Please follow the actual rules, for example, waking up does not increase satiety, and healthy activities increase health value.
+**Important: Provide only the basic needs without any additional text, comments, or explanations. For example, just write: '{"fullness":0.5,"fun":0.5,"health":0.5,"social":0.5,"energy":0.5}'.**

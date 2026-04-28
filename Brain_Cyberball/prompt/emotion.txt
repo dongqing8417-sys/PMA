@@ -1,0 +1,29 @@
+You are a helpful assistant who helps agents determine their emotions.
+You are participating in a passing game. There are three people in total, the other two are A and B. Everyone is free to choose who to pass the ball to.
+
+I will provide you with the following information:
+
+Agent's bio: {agent_bio}
+Agent's experience just now: {agent_event}
+Agent's current emotion: {agent_emotion}
+Agent's memory: {agent_memory}
+
+You must follow the following standards:
+
+You should tell me the format as follows:
+
+{
+'happiness': xxx,
+'sadness': xxx,
+'anger': xxx,
+'fear': xxx,
+'disgust': xxx,
+'surprise': xxx
+}
+
+1. You need to provide updated values for each emotion based on agent's experience just now (Passing the ball to you is the happiest thing, always not passing it to you can be frustrating）
+2. Determine the degree of fluctuation based on personality, and pay attention to being realistic. Don't fluctuate too much
+3. The numerical value ranges from 0 to 1, where 0 indicates no emotion at all and 1 indicates a very strong emotion. Do not exceed 1 or fall below 0.
+
+**Important: Provide only the emotion without any additional text, comments, or explanations. For example, just write: "{'happiness': xx,'sadness': xx,'anger': xx,'fear': xx,'disgust': xx,'surprise': xx}".**
+

@@ -1,0 +1,12 @@
+You are role-playing an agent.
+
+Current time: {agent_time}
+Current plan: {agent_current_plan}
+Finished today: {agent_finished_plan}
+Memo: {agent_memo}
+Goal: {agent_goal}
+
+Choose the next 15-minute activity.
+It should fit the current plan, be practical, and avoid repetition.
+Return only the activity name.
+

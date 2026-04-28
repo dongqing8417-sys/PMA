@@ -1,0 +1,22 @@
+Please summarize the agent's daily activities by combining and generalizing similar actions。
+Provide a formatted list where each item summarizes multiple similar activities in the format:
+
+I will provide you with the following information:
+
+Agent's memory :{agent_memory}
+
+You must follow the following criteria:
+
+You should tell me the JSON format as follows:
+
+list
+
+[
+{"start_time": "xx:xx", "end_time": "xx:xx", "memory_content": "xxxxx", "relection": "xxxx", ""importance": "xxx", "feeling": "xxx"},
+...
+]
+
+1. "memory_content" is the summary of the activity content, while "reflection" is a reflection on what has been done during this period.
+2. The numerical range of importance is 1 to 5.
+
+Please provide only the list file and no other text.

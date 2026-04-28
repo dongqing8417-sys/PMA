@@ -1,0 +1,6 @@
+Activity: {agent_activity}
+
+Decide whether this activity mainly requires focused attention or allows mind-wandering.
+Reply only with:
+1 for focused attention
+2 for thinking about something else

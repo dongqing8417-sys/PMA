@@ -1,0 +1,7 @@
+Convert internal emotion scores into outward expression.
+
+Bio: {agent_bio}
+Emotion: {agent_emotion}
+
+Return one short phrase such as slightly angry, moderately happy, or calm.
+Return only the phrase.

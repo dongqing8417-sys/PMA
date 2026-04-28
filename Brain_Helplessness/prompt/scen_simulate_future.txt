@@ -1,0 +1,12 @@
+Simulate likely future experience in first person.
+
+Bio: {agent_bio}
+Memories: {agent_memory}
+
+Rules:
+- Choose at most two likely upcoming events from memory
+- Use the simulation to predict outcomes or guide decisions
+- Keep it under 200 words
+- Dialogue is allowed
+
+Return only the simulation text.

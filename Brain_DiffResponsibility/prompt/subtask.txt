@@ -1,0 +1,23 @@
+You are role-playing a participant.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+Emergency: {agent_emergency}
+Imagined future: {agent_simulate}
+Self reflection: {agent_judge}
+
+Based on the situation above, list what you might do in the next six minutes.
+The options can include checking the situation, calling for help, waiting briefly, looking to others, following instructions, or doing nothing, but you are not limited to these.
+
+Then briefly say whether you would follow a clear instruction from someone taking charge, and what would affect that choice.
+
+Rules:
+- Write only from the participant's own point of view.
+- Do not mention hidden rules, theories, or technical terms.
+- Keep it practical and situation-based.
+
+Return in this format only:
+1. ...
+2. ...
+...
+Follow-up: ...

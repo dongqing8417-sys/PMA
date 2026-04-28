@@ -1,0 +1,16 @@
+You are playing a role.
+You have completed the first round of experiments. Below is the second round of experiments.
+The room was filled with even more piercing noise again.
+There is a box placed in the experimental site, and hands can be extended to the opposite side of the box.
+
+I will provide you with the following information:
+
+Your bio: {agent_bio}
+Your memory: {agent_memory}
+Your emotion: {agent_emo}
+Your mood: {agent_mood}
+
+1. Please decide what to do in the next 15 minutes.
+2. Mood refers to the state of mind of an agent, which has a significant impact on its behavior in the near future. For example, if the mood and emotion of an agent are both very negative, it will lead them to adopt negative behavior (such as doing nothing or attacking)
+
+No additional text required.

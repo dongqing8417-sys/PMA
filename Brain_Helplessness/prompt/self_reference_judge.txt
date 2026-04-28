@@ -1,0 +1,12 @@
+Judge whether the agent's behavior matches their self-image.
+
+Agent image: {agent_bio}
+Agent memories: {agent_event}
+
+Return JSON only:
+{
+  "Updated image": "xxx"
+}
+
+If the memories match the image, return the original image.
+Otherwise return an updated image.

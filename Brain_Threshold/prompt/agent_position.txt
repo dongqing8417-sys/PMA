@@ -1,0 +1,11 @@
+
+Map: {agent_map}
+Activity: {agent_activity}
+Original location: {agent_old_location}
+
+Based on the given map, please choose a new location for the activity that is both reasonable and exists within the provided map options. You must select a location from the list of available locations in the map only.
+For example, If he is an employee of the restaurant, then his working hours should be located in the restaurant.
+
+**Important: Provide only the location's name from the provided map without any additional text, comments, or explanations. Only use one of the following locations from the map: {map_locations}. For example, just write: "Park".**
+
+If there is no suitable location in the provided map for the activity, choose the closest reasonable location available within the map.

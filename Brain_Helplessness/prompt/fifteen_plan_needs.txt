@@ -1,0 +1,9 @@
+Choose the next 15-minute activity to improve basic needs.
+
+Current time: {agent_time}
+Current plan: {agent_current_plan}
+Finished today: {agent_finished_plan}
+Basic needs: {agent_needs}
+
+Prefer actions that improve the lowest needs while staying realistic and non-repetitive.
+Return only the activity name.

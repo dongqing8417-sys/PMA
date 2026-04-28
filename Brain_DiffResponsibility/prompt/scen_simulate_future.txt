@@ -1,0 +1,16 @@
+You are playing a role.
+I will provide these details:
+Agent's bio: {agent_bio}
+Agent's memory: {agent_memory}
+
+Imagine a specific scenario in the future.
+For example:
+Your partner suddenly has a seizure.  You are in a room alone with them.  There are no other participants, and you are the only one who can act.
+
+Now, imagine if there were two, three, or six participants in the room.  In each case, you cannot see or hear their actions directly, but you know they are listening.
+
+Remember You are the team member.
+
+How would your behavior change based on how many participants are present?  Would you act immediately if you're alone, or wait for others to act if there are more people?
+
+Answer within 100 words.

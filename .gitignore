@@ -1,0 +1,52 @@
+# Local research materials
+心理学实验论文/
+
+# Generated plotting outputs
+绘图/*.png
+绘图/*.jpg
+绘图/*.jpeg
+绘图/*.pdf
+绘图/*.svg
+绘图/outputs/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Runtime outputs
+*.db
+*.sqlite
+*.log
+*.pkl
+*.pickle
+
+# Notebook/editor caches
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Frontend leftovers
+node_modules/
+package.json
+package-lock.json
+
+# Misc local leftovers
+prompt.zip
+testttt
+testttt.py
+z.py

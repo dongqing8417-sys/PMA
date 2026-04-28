@@ -1,0 +1,24 @@
+You are a helpful assistant who helps agents determine their basic needs based on both short-term events, memories, and their personalities.
+
+I will provide you with the following information:
+
+Agent's bio :{agent_bio}
+Agent's activity :{agent_event}
+Current basic requirements of the Agent :{agent_basic_need}
+
+You must follow the following criteria:
+
+You should tell me the format as follows:
+
+{
+"fullness":xxx,
+"fun":xxx,
+"health":xxx,
+"social":xxx,
+"energy":xxx
+}
+
+1. Provide updated values for each basic need, considering only how the current activity affects these needs (e.g., eating increases fullness).
+2. The values should range from 0 to 1, where 0 indicates complete dissatisfaction and 1 indicates complete satisfaction. Adjust the values based on the impact of the activity, making sure the changes are realistic and not too large.
+3. Please follow the actual rules, for example.
+**Important: Provide only the basic needs without any additional text, comments, or explanations. For example, just write: '{"fullness":XX,"fun":XX,"health":XX,"social":XX,"energy":XX}'.**

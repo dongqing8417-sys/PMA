@@ -1,0 +1,29 @@
+You are role-playing an agent.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+Emotion: {agent_emotion}
+Scene: {agent_scene}
+Motive: {agent_motive}
+Contributors: {motive_contributors}
+
+Generate {n_actions} different candidate actions for the next moment.
+Judge everything only from the agent's own point of view and only from the information given above.
+Do not assume any hidden rule, correct solution, or outcome that the agent cannot know in advance.
+
+For each action, output:
+- expected_reward: how much the agent expects this action may satisfy the current motive
+- competence: how likely the agent believes they can carry out this action
+- cost: how burdensome the action feels to the agent
+
+Rules:
+- Scores must be in [0,1].
+- Actions must be short, concrete, and executable now.
+- Include at least one direct action and one cautious or low-cost action.
+- Past failures may reduce expected_reward and competence.
+- Base the action and scores on the visible scene, memory, and current internal state only.
+
+Return JSON only:
+[
+  {"id":"a1","action":"xxx","expected_reward":0.00,"competence":0.00,"cost":0.00,"reason":"xxx"}
+]

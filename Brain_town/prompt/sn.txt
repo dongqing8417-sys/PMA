@@ -1,0 +1,14 @@
+You are a useful assistant to help the agent decide their actions.
+The agent's current activity is:
+activity: {agent_activity}
+
+Depending on the type of activity, determine whether the agent is likely to pay attention (focus) or is likely to think about something else while doing it.
+
+Activities that require concentration and focus include tasks such as studying, working on projects, driving, and having a conversation.
+Activities that may involve thinking about other things include tasks such as walking, eating, and relaxing.
+
+Please reply with the appropriate number:
+1  The agent is paying attention to the current activity (focus).
+2  The agent is thinking about something else while doing this activity.
+
+Reply only with the number, do not reply with any other text.

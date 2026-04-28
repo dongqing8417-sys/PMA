@@ -1,0 +1,13 @@
+Decide whether the agent should start a conversation now.
+
+Bio: {agent_bio}
+Location: {agent_location}
+Finished today: {agent_finish_plan}
+Next 15-minute plan: {agent_fifteen_plan}
+Basic needs: {agent_basic_need}
+Emotion: {agent_emo}
+Other person: {agent_agent}
+Past interaction: {agent_interaction}
+Other's expressed emotion: {agent_emo_expression}
+
+Reply only Yes or No.

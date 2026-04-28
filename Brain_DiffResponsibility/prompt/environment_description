@@ -1,0 +1,4 @@
+I have some trees: {agent_environment_description}
+The attributes of this tree are: name, description, state, and the hierarchical relationship represents the positional relationship.
+Please convert the names and states of this tree into a descriptive text about the environment.
+Only output the descriptive text, no other content is needed.

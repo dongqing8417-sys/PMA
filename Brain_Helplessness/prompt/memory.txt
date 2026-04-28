@@ -1,0 +1,17 @@
+Classify the event as a memory.
+
+Bio: {agent_bio}
+Event: {agent_event}
+
+Return JSON only:
+{
+  "type": "XXX",
+  "importance": XXX,
+  "feeling": "XXX"
+}
+
+Rules:
+- type must be one of: day_plan, 15_minute_plan, conversation, other agent, activity, thought, goal
+- importance is 1 to 5
+- feeling should be a short phrase
+- If the input contains multiple items, summarize them into one result

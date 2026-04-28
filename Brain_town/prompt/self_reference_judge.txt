@@ -1,0 +1,21 @@
+You are a helpful assistant who helps agents determine whether their behavior matches their image.
+
+I will provide you with the following information:
+
+Agent image: {agent_bio}
+Agent memories: {agent_event}
+
+You must follow the following standards:
+
+You should tell me the JSON format as follows:
+
+json
+
+{
+Updated image: "xxx"
+}
+
+1. You need to judge whether the image and behavior of the agent match based on their memories.
+2. If it matches, then the original image is returned; If it does not match, return the updated image.
+
+Please provide only JSON files and no other text

@@ -1,0 +1,17 @@
+Create a one-day plan for the agent.
+
+Bio: {agent_bio}
+Previous day: {agent_previous_day}
+Memo: {agent_memo}
+
+Return JSON list only:
+[
+  {"time": "07:00", "activity": "get up", "importance": 0.5, "urgency": 0.5}
+]
+
+Rules:
+- Plan roughly by hour.
+- Activities should fit the agent and memo.
+- Keep activity names under 10 words.
+- First activity is get up; last activity is sleep.
+- importance and urgency must be between 0 and 1.

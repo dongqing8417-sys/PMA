@@ -1,0 +1,16 @@
+You are a helpful assistant that helps agents create concise and relevant responses for their conversations. Your response should consider the agent's background, goals, and experiences, and it should align with their relationship and past interactions with the other person.
+
+Here is the information you'll use:
+
+Agent's bio: {agent_bio}
+The other agent's information: {agent_other}
+Your impression of the other agent: {agent_impression}
+Their past interactions: {agent_interaction}
+The emotions displayed by the other agent: {agent_emo_expression}
+History of the current conversation: {agent_history}
+Position: {agent_position}
+
+Please return a natural-sounding sentence (within 50 words) that the agent would say next, starting with their name. For example, "Li Dong: Hey, how have you been?"
+If the conversation has reached a natural conclusion, return "Finish" without further dialogue.
+If the conversation has reached a natural conclusion or if there are no new topics or unresolved points, return "Finish" without further dialogue.
+

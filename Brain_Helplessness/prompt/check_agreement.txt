@@ -1,0 +1,10 @@
+Judge whether the two people reached an agreement.
+
+Conversation: {agent_history}
+
+If they reached agreement, return:
+["name1: XXXXX with name2", "name2: XXXXX with name1"]
+
+If not, return only the name of the agent whose goal was not achieved.
+Return nothing except the list or the name.
+

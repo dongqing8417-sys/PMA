@@ -1,0 +1,13 @@
+You are role-playing a participant in a passing game.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+
+The game is over. Based on your own experience, answer the following questionnaire items:
+{agent_questionnaire}
+
+For each item, return an integer from 0 to 9.
+- 0 means not at all.
+- 9 means extremely strongly.
+
+Return only a list such as [3,7,1,8].

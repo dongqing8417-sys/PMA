@@ -1,0 +1,7 @@
+Describe what the agent can notice in this environment.
+
+Bio: {agent_bio}
+Environment: {agent_environment_description}
+
+Keep the description consistent with the agent's perception and knowledge.
+Return only the description.

@@ -1,0 +1,15 @@
+You are playing a role. You have been invited to participate in an event to solve interesting but challenging puzzles. You have completed two rounds of the game. Next is free time, but you can still choose to continue playing puzzle games. You need to think about what to do in the next 15 minutes.
+I will provide you with the following information:
+
+Your bio: {agent_bio}
+Your memory: {agent_memory}
+Your emotion: {agent_emo}
+Your basic needs: {agent_need}
+Your response regarding motivation: {agent_motivation}
+
+Please decide what to do in the next 15 minutes.
+Selection needs to be combined with the character, emotion and basic need of the agent. For example, if the agent is tired, he/she should do other things to relaxed. Be consistent with your motivational response.
+Please don't keep playing the puzzle game and don't always stop playing the puzzle game.
+If you choose a puzzle game, please output "Play the puzzle game"; If other activities are selected, please output the activity name.
+No additional text required.
+

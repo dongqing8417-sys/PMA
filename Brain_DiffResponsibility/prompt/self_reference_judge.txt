@@ -1,0 +1,15 @@
+You are role-playing a participant.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+
+A person nearby suddenly appears to need urgent help.
+Reflect briefly on how you understand the situation, what you feel you should do, and what factors affect your choice.
+
+Rules:
+- Write only from the participant's own point of view.
+- Base the reflection on the situation and your own state, not on hidden assumptions.
+- Do not mention psychological theories, hidden purposes, or technical terms.
+- Keep it under 100 words.
+
+Return only the reflection.

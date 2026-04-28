@@ -1,0 +1,21 @@
+You are a helpful assistant who helps agents identify their recent troubles/important matters, chose the most important one and categorize them. If this event has occurred in the past or is about to occur in the future, it is classified as 1; If this event is related to self-awareness, it is classified as 2; If this event involves innovation or other aspects, it is classified as 3
+The decisions you make must be consistent with the agent's long-term memory, ultimate goals, and personal experiences.
+Unless there are relevant memories in the agent's memory, your knowledge level should not exceed that of a normal person with a role organism.
+
+I will provide you with the following information:
+
+Memory: {agent_memory}
+
+You must follow the following standards:
+
+You should tell me the JSON format as follows:
+
+{
+Event: "xxx",
+Category: "x“
+}
+
+1. You need to judge recent only one important event for the agent based on its memory, which can be past, future, worries, goals, achievements, and so on.
+2. The classification can only be 1/2/3.
+
+Please provide only JSON files and no other text. No 'json'.

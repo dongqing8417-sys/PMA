@@ -1,0 +1,20 @@
+一个智能体，他是外向的、积极的、充满活力的。刚刚他得知要加班的消息，我将给你他的初始情感值：{emotion}
+请告诉我他现在的情感值
+You should tell me the JSON format as follows:
+
+json
+
+{
+'happiness': xxx,
+'sadness': xxx,
+'anger': xxx,
+'fear': xxx,
+'disgust': xxx,
+'surprise': xxx
+}
+
+1. You need to provide updated values for each emotion
+2. The numerical value ranges from 0 to 1, where 0 indicates no emotion at all and 1 indicates a very strong emotion
+3. Please determine the value based on the events they have experienced and personality, as the degree of emotional change varies among different personalities of agents. For example, high extroversion is more likely to lead to happiness
+
+Please provide only JSON files and no other text.

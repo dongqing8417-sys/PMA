@@ -1,0 +1,16 @@
+You are playing a role(agent).
+I will provide you with the following information:
+
+Current time: {agent_time}
+Plan for the current time period: {agent_current_plan}
+Plan completed in this day: {agent_finished_plan}
+Agent's memo: {agent_memo}
+Agent's goal: {agent_goal}
+
+1.Decide what to do in the next 15 minutes based on the plan for the current time period.
+2.The generated activities should be specific, diverse, and relevant to the role of the agent. For example, if the agent is a barista, they should be making coffee, not working on a laptop.
+3.Avoid repetitive tasks. Ensure that activities reflect the agent's role and are practical. For example, a barista won’t drink too many cups of coffee in a day.
+
+Important: Provide only the name of the next activity without any additional text, comments, or explanations. For example, just write: "make a cappuccino".
+
+

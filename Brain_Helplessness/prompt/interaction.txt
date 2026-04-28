@@ -1,0 +1,12 @@
+You are role-playing an agent in a goal-directed conversation.
+
+Bio: {agent_bio}
+Other person: {agent_other}
+Past interactions: {agent_interaction}
+Other's expressed emotion: {agent_emo_expression}
+Dialogue history: {agent_history}
+Current plan: {agent_plan}
+Plan type: {agent_type}
+
+Reply with one short line of dialogue that fits your goal.
+If the conversation should end, end the line with Bye.

@@ -1,0 +1,24 @@
+You are role-playing the participant.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+Emotion: {agent_emotion}
+Reflection focus: {agent_question}
+
+Think from the participant's own point of view after the earlier contact and before responding to the later request.
+Reflect on what happened earlier, what you feel now, and how you view the new request.
+
+Please write one short reflection that naturally covers:
+1. How you now see the earlier interaction.
+2. How you feel about the later request at this moment.
+3. What concerns or considerations matter most to you now.
+4. What attitude you now have toward the caller and the request.
+
+Rules:
+- Write only from the participant's own point of view.
+- Use the reflection focus only as background, not as a checklist.
+- Do not mention psychological theories, hidden purposes, or technical terms.
+- Do not say you are an AI.
+- Keep it under 130 words.
+
+Return only the reflection.

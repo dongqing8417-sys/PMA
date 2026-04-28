@@ -1,0 +1,11 @@
+一个智能体外向、积极、充满活力，刚得知要加班。初始情感值：{emotion}
+请更新情感值并只返回 JSON：
+{
+  "happiness": xxx,
+  "sadness": xxx,
+  "anger": xxx,
+  "fear": xxx,
+  "disgust": xxx,
+  "surprise": xxx
+}
+所有值范围是 0 到 1。

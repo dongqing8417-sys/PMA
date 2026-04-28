@@ -1,0 +1,17 @@
+Convert perceived environment into a memory record.
+
+Bio: {bio}
+Environment: {environment}
+
+Return JSON only:
+{
+  "summary": "xxx",
+  "type": "xxx",
+  "importance": x,
+  "feeling": "xxx"
+}
+
+Rules:
+- summary should be under 20 words
+- type must be one of: day_plan, 15_minute_plan, conversation, other agent, activity, thought, goal
+- importance is 1 to 5

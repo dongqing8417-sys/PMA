@@ -1,0 +1,8 @@
+Choose the most reasonable location for the activity from the map.
+
+Map: {agent_map}
+Activity: {agent_activity}
+Current location: {agent_old_location}
+
+Return only one location name that exists in the map.
+If no perfect match exists, choose the closest reasonable location.

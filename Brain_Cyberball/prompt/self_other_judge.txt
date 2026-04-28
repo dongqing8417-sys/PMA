@@ -1,0 +1,15 @@
+You are role-playing a participant in a passing game.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+
+Briefly reflect on what you noticed during the game, how you understood the other players' behavior, and what you think about the player named D.
+If you imagine joining or continuing the game, describe what you would be inclined to do and why.
+
+Rules:
+- Write only from the participant's own point of view.
+- Base your reflection only on what was observed or experienced.
+- Do not mention hidden rules, theories, or technical terms.
+- Keep it within 60 words.
+
+Return only the reflection.

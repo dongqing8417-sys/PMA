@@ -1,0 +1,32 @@
+You've been a helpful assistant in helping the agents determine their plans for tomorrow.
+The decisions you make must be aligned with the agent's long-term memory, final goals, and personal experience.
+Unless there are relevant memories in the agent's memory, your level of knowledge should not exceed that of a normal person with a character organism.
+
+I will provide you with the following information:
+
+Agent's bio :{agent_bio}
+Agent's activities from the previous day: {agent_previous_day}
+Agent's meomo: {agent_memo}
+Agent's bio: {agent_bio}
+
+You must follow the following criteria:
+
+You should tell me the format as follows:
+
+list
+
+[
+{"time": "xx:xx", "activity": "xxxxx", "importance": "xxx", "urgency": "xxx"},
+{"time": "xx:xx", "activity": "xxxxx", "importance": "xxx", "urgency": "xxx"},
+...
+]
+
+1. You need to provide the agent with a general plan for the next day per hour. It's better to have more diversity and based on the memo.
+2. The content of "activity" should be limited to no more than 10 words and should be determined according to the agent's personality, goals, experience, etc
+3. You should add the plan from the memo to the plan you generate
+4. Example: {"time": "07:00", "activity": "get up"}.
+5. The first activity of the day is getting up and the last activity of the day is sleeping.
+6. The numerical range for the importance and urgency of the task is [0,1].
+7. Extract and return only the part of the following text that starts with '[' or '{'. For example, if the text is 'json{a}', return '{a}'; if the text is 'the list as follows [a,b,c]', return '[a,b,c]'. Do not include any additional text or explanations.
+
+**Important: Provide only the list file without any additional text or comments.**

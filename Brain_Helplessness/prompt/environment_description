@@ -1,0 +1,6 @@
+Convert the environment tree into plain descriptive text.
+
+Tree: {agent_environment_description}
+
+Use names, states, and hierarchy to describe the environment.
+Return only the description.

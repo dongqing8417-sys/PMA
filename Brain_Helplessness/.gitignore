@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local IDE / OS files
+.idea/
+.DS_Store
+
+# Environment / secrets
+.env
+
+# Runtime artifacts
+*.log
+*.db
+
+# Local scratch files
+/tmp/

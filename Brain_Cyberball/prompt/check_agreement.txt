@@ -1,0 +1,15 @@
+Please judge whether the two people have reached an agreement based on the conversation.
+Conversation: {agent_history}
+
+If agreement is reached, please return your respective plans in the following format:
+["name1: XXXXX with name2", "name2: XXXXX with name1"]
+For example: ["Jack: Have a cup of coffee with Li Hua","Mary: Have a cup of coffee with Zhang San"]
+Please don't provide any other text.
+
+If no agreement is reached, please determine which agent has not achieved the goal based on the conversation, and return
+the agent's (who has not achieved the goal) name only.
+For example:
+Conversation:["Jack: Would you like to go for a run with me?", "Mary: I'm so sorry, I hate sports."]
+return "Jack" only.
+
+

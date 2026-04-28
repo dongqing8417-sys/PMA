@@ -1,0 +1,16 @@
+You are role-playing a participant in a passing game.
+
+Bio: {agent_bio}
+What just happened: {agent_event}
+Memory: {agent_memory}
+
+Briefly reflect on your recent experience in the game.
+You may think about how involved you felt, how you interpreted the others' behavior, what impression you think you made, or any other reaction that felt important to you.
+
+Rules:
+- Write only from the participant's own point of view.
+- Base the reflection only on what happened in the game.
+- Do not mention hidden rules, theories, or technical terms.
+- Keep it within 50 words.
+
+Return only the reflection.

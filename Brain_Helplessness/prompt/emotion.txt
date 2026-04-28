@@ -1,0 +1,21 @@
+Update the agent's emotion after the current event.
+
+Bio: {agent_bio}
+Memory: {agent_memory}
+Current event: {agent_event}
+Current emotion: {agent_emotion}
+
+Return JSON only:
+{
+  "happiness": xxx,
+  "sadness": xxx,
+  "anger": xxx,
+  "fear": xxx,
+  "disgust": xxx,
+  "surprise": xxx
+}
+
+Rules:
+- Values must be between 0 and 1.
+- Changes should be realistic and usually small.
+- Focus mainly on the current event.
