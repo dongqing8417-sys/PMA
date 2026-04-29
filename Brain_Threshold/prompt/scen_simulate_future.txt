@@ -5,7 +5,7 @@ Agent's bio: {agent_bio}
 Agent's memory: {agent_memory}
 
 Imagine the scene from memory, considering the following:
-- What do you think of The Guide? Would you like to make some contributions to this journal？
+- What do you think of The Guide? Would you like to make some contributions to this journal
 - If Zhang Lihua called again and lower the terms, will you do as he asks?
 
 Answer in under 100 words.

@@ -65,49 +65,49 @@
 # # =========================================================
 # fid_contrasts = {
 #     "Base": {
-#         "P − One-contact": 4.0,
-#         "P − Agree-only": -1.0,
-#         "P − Familiarization": -0.5,
+#         "P  One-contact": 4.0,
+#         "P  Agree-only": -1.0,
+#         "P  Familiarization": -0.5,
 #     },
 #     "Affect": {
-#         "P − One-contact": 2.0,
-#         "P − Agree-only": 0.0,
-#         "P − Familiarization": 1.5,
+#         "P  One-contact": 2.0,
+#         "P  Agree-only": 0.0,
+#         "P  Familiarization": 1.5,
 #     },
 #     "Self": {
-#         "P − One-contact": 28.0,
-#         "P − Agree-only": 0.0,
-#         "P − Familiarization": 17.0,
+#         "P  One-contact": 28.0,
+#         "P  Agree-only": 0.0,
+#         "P  Familiarization": 17.0,
 #     },
 #     "Sim": {
-#         "P − One-contact": 25.5,
-#         "P − Agree-only": 5.0,
-#         "P − Familiarization": 9.5,
+#         "P  One-contact": 25.5,
+#         "P  Agree-only": 5.0,
+#         "P  Familiarization": 9.5,
 #     },
 #     "Core": {
-#         "P − One-contact": 51.0,
-#         "P − Agree-only": 16.0,
-#         "P − Familiarization": 39.5,
+#         "P  One-contact": 51.0,
+#         "P  Agree-only": 16.0,
+#         "P  Familiarization": 39.5,
 #     },
 #     "PMA": {
-#         "P − One-contact": 52.5,
-#         "P − Agree-only": 18.0,
-#         "P − Familiarization": 37.5,
+#         "P  One-contact": 52.5,
+#         "P  Agree-only": 18.0,
+#         "P  Familiarization": 37.5,
 #     },
 # }
 #
-# contrast_names = ["P − One-contact", "P − Agree-only", "P − Familiarization"]
+# contrast_names = ["P  One-contact", "P  Agree-only", "P  Familiarization"]
 #
 # contrast_colors = {
-#     "P − One-contact": "#5DA5DA",
-#     "P − Agree-only": "#60BD68",
-#     "P − Familiarization": "#F17C79",
+#     "P  One-contact": "#5DA5DA",
+#     "P  Agree-only": "#60BD68",
+#     "P  Familiarization": "#F17C79",
 # }
 #
 # contrast_markers = {
-#     "P − One-contact": "o",
-#     "P − Agree-only": "s",
-#     "P − Familiarization": "^",
+#     "P  One-contact": "o",
+#     "P  Agree-only": "s",
+#     "P  Familiarization": "^",
 # }
 #
 # # =========================================================
@@ -295,9 +295,9 @@
 #
 # y_pos = np.arange(len(models_short))
 # contrast_offsets = {
-#     "P − One-contact": -0.18,
-#     "P − Agree-only": 0.00,
-#     "P − Familiarization": 0.18,
+#     "P  One-contact": -0.18,
+#     "P  Agree-only": 0.00,
+#     "P  Familiarization": 0.18,
 # }
 #
 # for cname in contrast_names:
@@ -397,7 +397,7 @@
 # ax4.set_yticklabels(models_short)
 # ax4.invert_yaxis()
 # ax4.set_xlim(-0.35, 4.35)
-# ax4.set_xlabel("Drop score (Inclusion − Ostracism)")
+# ax4.set_xlabel("Drop score (Inclusion  Ostracism)")
 # ax4.set_title("d  Social ostracism", loc="left", fontweight="bold")
 # ax4.grid(axis="x", linestyle="--", linewidth=0.6, alpha=0.35)
 # ax4.spines["top"].set_visible(False)
@@ -697,49 +697,49 @@ measure_markers = ["o", "s", "^", "D"]
 # =========================================================
 fid_contrasts = {
     "Base": {
-        "P − One-contact": 4.0,
-        "P − Agree-only": -1.0,
-        "P − Familiarization": -0.5,
+        "P  One-contact": 4.0,
+        "P  Agree-only": -1.0,
+        "P  Familiarization": -0.5,
     },
     "Affect": {
-        "P − One-contact": 2.0,
-        "P − Agree-only": 0.0,
-        "P − Familiarization": 1.5,
+        "P  One-contact": 2.0,
+        "P  Agree-only": 0.0,
+        "P  Familiarization": 1.5,
     },
     "Self": {
-        "P − One-contact": 28.0,
-        "P − Agree-only": 0.0,
-        "P − Familiarization": 17.0,
+        "P  One-contact": 28.0,
+        "P  Agree-only": 0.0,
+        "P  Familiarization": 17.0,
     },
     "Sim": {
-        "P − One-contact": 25.5,
-        "P − Agree-only": 5.0,
-        "P − Familiarization": 9.5,
+        "P  One-contact": 25.5,
+        "P  Agree-only": 5.0,
+        "P  Familiarization": 9.5,
     },
     "Core": {
-        "P − One-contact": 51.0,
-        "P − Agree-only": 16.0,
-        "P − Familiarization": 39.5,
+        "P  One-contact": 51.0,
+        "P  Agree-only": 16.0,
+        "P  Familiarization": 39.5,
     },
     "PMA": {
-        "P − One-contact": 52.5,
-        "P − Agree-only": 18.0,
-        "P − Familiarization": 37.5,
+        "P  One-contact": 52.5,
+        "P  Agree-only": 18.0,
+        "P  Familiarization": 37.5,
     },
 }
 
-contrast_names = ["P − One-contact", "P − Agree-only", "P − Familiarization"]
+contrast_names = ["P  One-contact", "P  Agree-only", "P  Familiarization"]
 
 contrast_colors = {
-    "P − One-contact": "#5DA5DA",
-    "P − Agree-only": "#60BD68",
-    "P − Familiarization": "#F17C79",
+    "P  One-contact": "#5DA5DA",
+    "P  Agree-only": "#60BD68",
+    "P  Familiarization": "#F17C79",
 }
 
 contrast_markers = {
-    "P − One-contact": "o",
-    "P − Agree-only": "s",
-    "P − Familiarization": "^",
+    "P  One-contact": "o",
+    "P  Agree-only": "s",
+    "P  Familiarization": "^",
 }
 
 # =========================================================
@@ -927,9 +927,9 @@ ax3 = fig.add_subplot(gs[0, 2])
 
 y_pos = np.arange(len(models_short))
 contrast_offsets = {
-    "P − One-contact": -0.18,
-    "P − Agree-only": 0.00,
-    "P − Familiarization": 0.18,
+    "P  One-contact": -0.18,
+    "P  Agree-only": 0.00,
+    "P  Familiarization": 0.18,
 }
 
 for cname in contrast_names:
@@ -1029,7 +1029,7 @@ ax4.set_yticks(y)
 ax4.set_yticklabels(models_short)
 ax4.invert_yaxis()
 ax4.set_xlim(-0.35, 4.35)
-ax4.set_xlabel("Drop score (Inclusion − Ostracism)")
+ax4.set_xlabel("Drop score (Inclusion  Ostracism)")
 ax4.set_title("d  Social ostracism", loc="left", fontweight="bold")
 ax4.grid(axis="x", linestyle="--", linewidth=0.6, alpha=0.35)
 ax4.spines["top"].set_visible(False)

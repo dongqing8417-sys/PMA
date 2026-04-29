@@ -54,12 +54,12 @@ class DMN:
         pass
 
     def random_imagine(self, bio):
-        prompt1 = "Please generate three random words，Only provide the three words, separated by commas, without any additional text."
+        prompt1 = "Please generate three random wordsOnly provide the three words, separated by commas, without any additional text."
         words = LLMs(self.model, prompt1).ask()
         prompt2 = (
             "Please play a role, the role information is as follows: "
             + bio
-            + ". Please imitate the process of his/her random imagination (daydreaming) and generate a paragraph of content, The content must be related to the following three words： "
+            + ". Please imitate the process of his/her random imagination (daydreaming) and generate a paragraph of content, The content must be related to the following three words "
             + words
         )
         return LLMs(self.model, prompt2).ask()

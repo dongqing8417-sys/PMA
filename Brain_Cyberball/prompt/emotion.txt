@@ -21,7 +21,7 @@ You should tell me the format as follows:
 'surprise': xxx
 }
 
-1. You need to provide updated values for each emotion based on agent's experience just now (Passing the ball to you is the happiest thing, always not passing it to you can be frustrating）
+1. You need to provide updated values for each emotion based on agent's experience just now (Passing the ball to you is the happiest thing, always not passing it to you can be frustrating
 2. Determine the degree of fluctuation based on personality, and pay attention to being realistic. Don't fluctuate too much
 3. The numerical value ranges from 0 to 1, where 0 indicates no emotion at all and 1 indicates a very strong emotion. Do not exceed 1 or fall below 0.
 

@@ -81,13 +81,13 @@ class Memory:
     #     conn.commit()
     #     conn.close()
     #
-    # # def retrieve_memory(self, memory_type=None, limit=None, min_importance=None):  # 新增 min_importance 参数
+    # # def retrieve_memory(self, memory_type=None, limit=None, min_importance=None):  #  min_importance 
     # #     conn = sqlite3.connect(self.db_name)
     # #     cursor = conn.cursor()
     # #     query = 'SELECT id, memory_content, memory_type, memory_importance, memory_feeling, memory_place, timestamp FROM Memories'
     # #     params = []
     # #
-    # #     # 添加查询条件
+    # #     # 
     # #     conditions = []
     # #     if memory_type:
     # #         conditions.append('memory_type = ?')
@@ -115,7 +115,7 @@ class Memory:
     #     query = 'SELECT id, memory_content, memory_type, memory_importance, memory_feeling, memory_place, timestamp FROM Memories'
     #     params = []
     #
-    #     # 添加查询条件
+    #     # 
     #     conditions = []
     #     if memory_type:
     #         conditions.append('memory_type = ?')
@@ -127,7 +127,7 @@ class Memory:
     #     if conditions:
     #         query += ' WHERE ' + ' AND '.join(conditions)
     #
-    #     # 确保按时间戳排序
+    #     # 
     #     query += ' ORDER BY timestamp DESC' if not order_by_timestamp_asc else ' ORDER BY timestamp ASC'
     #     if limit:
     #         query += ' LIMIT ?'
@@ -140,18 +140,18 @@ class Memory:
 
     def format_time(self, timestamp):
         if isinstance(timestamp, time):
-            # 如果是 datetime.time 类型，则格式化为 HH:MM
+            #  datetime.time  HH:MM
             return timestamp.strftime("%H:%M")
         elif isinstance(timestamp, str):
-            # 如果是字符串类型，检查是否符合 HH:MM 或 HH:MM:SS 格式
+            #  HH:MM  HH:MM:SS 
             parts = timestamp.split(":")
             if len(parts) == 3:
-                # 如果是 HH:MM:SS 格式，提取前两个部分
+                #  HH:MM:SS 
                 return f"{parts[0]}:{parts[1]}"
             elif len(parts) == 2:
-                # 已经是 HH:MM 格式，直接返回
+                #  HH:MM 
                 return timestamp
-        # 如果格式不匹配，则返回 None 或抛出异常，表示格式不正确
+        #  None 
         raise ValueError("Invalid time format")
 
     def add_memory(self, memory_content, memory_type, memory_importance, memory_feeling, timestamp):
@@ -172,7 +172,7 @@ class Memory:
         query = 'SELECT id, memory_content, memory_type, memory_importance, memory_feeling, memory_place, timestamp FROM Memories'
         params = []
 
-        # 添加查询条件
+        # 
         conditions = []
         if memory_type:
             conditions.append('memory_type = ?')
@@ -181,7 +181,7 @@ class Memory:
             conditions.append('memory_importance >= ?')
             params.append(min_importance)
 
-        # 添加 specific_time 作为查询条件
+        #  specific_time 
         if specific_time:
             conditions.append("strftime('%H:%M', timestamp) = ?")
             params.append(specific_time)
@@ -189,7 +189,7 @@ class Memory:
         if conditions:
             query += ' WHERE ' + ' AND '.join(conditions)
 
-        # 根据传入参数决定排序方式，默认按 id 排序（即插入顺序）
+        #  id 
         query += ' ORDER BY id ASC' if order_by_timestamp_asc else ' ORDER BY id DESC'
 
         if limit:
@@ -203,7 +203,7 @@ class Memory:
 
 
     def retrieve_important_memories(self, min_importance=3):
-        # 获取所有重要性大于等于3的记忆
+        # 3
         return self.retrieve_memory(min_importance=min_importance)
 
     def get_last_memory_content(self):
@@ -219,7 +219,7 @@ class Memory:
         return None
 
     def print_all_memories(self):
-        # 获取所有记忆
+        # 
         memories = self.retrieve_memory()
 
         if not memories:
@@ -227,7 +227,7 @@ class Memory:
             print("No memories found.")
             return
 
-        # 打印记忆
+        # 
         for memory in memories:
             logging.info(f"memory: {memory}")
             print("memory:", memory)
@@ -249,7 +249,7 @@ class Memory:
             print("-" * 40)
 
     def format_memory_for_agent(self, memory):
-        # 将一个单独的记忆条目格式化为字符串
+        # 
         memory_string = (
             f"On {memory[6]}, at {memory[5]}, the agent experienced {memory[1]} "
             f"which was categorized as a {memory[2]} memory with an importance of {memory[3]}. "
@@ -258,7 +258,7 @@ class Memory:
         return memory_string
 
     def format_memories_for_agent(self, memories):
-        # 将多个记忆条目格式化为自然语言
+        # 
         formatted_memories = [self.format_memory_for_agent(memory) for memory in memories]
         return formatted_memories
 
@@ -272,13 +272,13 @@ class Memory:
         else:
             logging.info(f"Memory causing error: {memory}")
             print(f"Memory causing error: {memory}")
-            raise  # 重新抛出异常，以便后续处理
+            raise  # 
 
         return memory_string
 
 
     def format_simple_memories_for_agent(self, memories):
-        # 将多个记忆条目格式化为简短的自然语言描述
+        # 
         formatted_memories = [self.format_simple_memory_for_agent(memory) for memory in memories if memory]
         return formatted_memories
 
@@ -292,7 +292,7 @@ class Memory:
 
     def format_simple_memories_summary(self):
         """
-        将 memory_summary 表中的数据转换为自然语言格式。
+         memory_summary 
         """
         memories = self.retrieve_memory_summary()
         formatted_memories = []
@@ -304,17 +304,17 @@ class Memory:
         return formatted_memories
 
     def get_memories_for_agent(self, memory_type=None, limit=None):
-        # 检索记忆
+        # 
         memories = self.retrieve_memory(memory_type, limit)
 
-        # 将每个记忆条目格式化为字符串
+        # 
         formatted_memories = [self.format_memory_for_agent(memory) for memory in memories]
 
-        return formatted_memories  # 记忆列表
+        return formatted_memories  # 
 
     def delete_memory(self, memory_id=None, time_point=None):
         if memory_id is None and time_point is None:
-            raise ValueError("必须提供 memory_id 或 time_point 之一。")
+            raise ValueError(" memory_id  time_point ")
 
         conn = sqlite3.connect(self.db_name)
         cursor = conn.cursor()
@@ -338,7 +338,7 @@ class Memory:
 
     def print_memory_summary(self):
         """
-        打印 Memory_Summary 表中的所有记忆记录。
+         Memory_Summary 
         """
         memories = self.retrieve_memory_summary()
 

@@ -1,8 +1,8 @@
-Based on the provided agent profile and emotion score（the numerical range is from 0 to 1）, determine their outwardly expressed emotion.
+Based on the provided agent profile and emotion scorethe numerical range is from 0 to 1, determine their outwardly expressed emotion.
 
 The agent's bio: {agent_bio}
 The agent's emotion: {agent_emotion}
 
 The agent's personality may influence how strongly they display emotions.
-Please return the most appropriate emotion descriptor, and add degree adverbs (slightly, moderately, extremely) before emotions，such as 'extremely happy' or 'slightly angry' based on the character's personality and emotion score. If there are no obvious emotions, it can be 'calm'.
+Please return the most appropriate emotion descriptor, and add degree adverbs (slightly, moderately, extremely) before emotionssuch as 'extremely happy' or 'slightly angry' based on the character's personality and emotion score. If there are no obvious emotions, it can be 'calm'.
 Only return the emotion word, no additional text.

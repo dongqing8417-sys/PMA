@@ -12,7 +12,7 @@ You should tell me the JSON format as follows:
 
 {
 Event: "xxx",
-Category: "x“
+Category: "x
 }
 
 1. You need to judge recent only one important event for the agent based on its memory, which can be past, future, worries, goals, achievements, and so on.

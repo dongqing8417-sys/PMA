@@ -12,7 +12,7 @@ def save_progress(agent_list, current_time, step_number, cycle_number, completed
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
 
-        # 创建表，添加 id 字段作为主键
+        #  id 
         cursor.execute('''CREATE TABLE IF NOT EXISTS progress (
                             id INTEGER PRIMARY KEY,
                             agent_list BLOB,
@@ -22,7 +22,7 @@ def save_progress(agent_list, current_time, step_number, cycle_number, completed
                             completed_agent_index INTEGER
                         )''')
 
-        # 使用 id = 1 保证始终更新同一个记录
+        #  id = 1 
         cursor.execute('''INSERT OR REPLACE INTO progress (id, agent_list, current_time, step_number, cycle_number, completed_agent_index)
                           VALUES (1, ?, ?, ?, ?, ?)''',
                        (agent_list_blob, current_time_str, step_number, cycle_number, completed_agent_index))
@@ -31,26 +31,26 @@ def save_progress(agent_list, current_time, step_number, cycle_number, completed
 def load_progress():
     db_name = 'progress.db'
     if not os.path.exists(db_name):
-        raise FileNotFoundError(f"数据库文件 '{db_name}' 不存在，无法加载进度。")
+        raise FileNotFoundError(f" '{db_name}' ")
 
 
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
 
-        # 检查表是否存在
+        # 
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='progress'")
         if not cursor.fetchone():
-            raise FileNotFoundError("数据库中没有'progress'表。")
+            raise FileNotFoundError("'progress'")
 
-        # 获取最新进度记录
+        # 
         cursor.execute(
             "SELECT agent_list, current_time, step_number, cycle_number, completed_agent_index FROM progress WHERE id = 1")
         row = cursor.fetchone()
 
         if not row:
-            raise FileNotFoundError("进度表为空，未找到任何保存的进度。")
+            raise FileNotFoundError("")
 
-        # 解包记录
+        # 
         agent_list_blob, current_time, step_number, cycle_number, completed_agent_index = row
         agent_list = pickle.loads(agent_list_blob)
 
@@ -61,7 +61,7 @@ def load_progress():
 #     conn = sqlite3.connect(db_name)
 #     cursor = conn.cursor()
 #
-#     # 创建表格，假设表结构如下
+#     # 
 #     cursor.execute('''CREATE TABLE IF NOT EXISTS progress (
 #                         agent_name TEXT,
 #                         current_time TEXT,
@@ -69,10 +69,10 @@ def load_progress():
 #                         state BLOB
 #                     )''')
 #
-#     # 遍历 agent_list，将每个 agent 序列化后保存
+#     #  agent_list agent 
 #     for agent in agent_list:
-#         agent_name = str(agent.name)  # 假设每个 agent 对象有一个 name 属性
-#         state_blob = pickle.dumps(agent)  # 将 agent 对象序列化为二进制
+#         agent_name = str(agent.name)  #  agent  name 
+#         state_blob = pickle.dumps(agent)  #  agent 
 #
 #         # print("type:")
 #         # print(type(agent_name))
@@ -96,7 +96,7 @@ def load_progress():
 #     conn = sqlite3.connect(db_name)
 #     cursor = conn.cursor()
 #
-#     # 创建表格，添加 `cycle_number` 和 `completed_agent_index`
+#     #  `cycle_number`  `completed_agent_index`
 #     cursor.execute('''CREATE TABLE IF NOT EXISTS progress (
 #                         agent_list BLOB,
 #                         current_time TEXT,
@@ -123,27 +123,27 @@ def load_progress():
 # def load_progress():
 #     db_name = 'progress.db'
 #     if not os.path.exists(db_name):
-#         raise FileNotFoundError(f"数据库文件 {db_name} 不存在，无法加载进度。")
+#         raise FileNotFoundError(f" {db_name} ")
 #
 #     conn = sqlite3.connect(db_name)
 #     cursor = conn.cursor()
 #
-#     # 检查表是否存在
+#     # 
 #     cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='progress'")
 #     table_exists = cursor.fetchone()
 #
 #     if not table_exists:
 #         conn.close()
-#         raise FileNotFoundError("数据库中没有进度表。")
+#         raise FileNotFoundError("")
 #
-#     # 检查表中是否有记录
+#     # 
 #     cursor.execute("SELECT agent_list, current_time, step_number, cycle_number, completed_agent_index FROM progress")
 #     row = cursor.fetchone()
 #     if not row:
 #         conn.close()
-#         raise FileNotFoundError("进度表为空，未找到任何保存的进度。")
+#         raise FileNotFoundError("")
 #
-#     # 解包记录
+#     # 
 #     agent_list_blob, current_time, step_number, cycle_number, completed_agent_index = row
 #     agent_list = pickle.loads(agent_list_blob)
 #
@@ -153,30 +153,30 @@ def load_progress():
 
 
 # def load_progress():
-#     # 检查数据库文件是否存在，如果不存在则抛出 FileNotFoundError
+#     #  FileNotFoundError
 #     db_name = 'progress.db'
 #     if not os.path.exists(db_name):
-#         print(f"数据库文件 {db_name} 不存在，无法加载进度。")
+#         print(f" {db_name} ")
 #
 #     conn = sqlite3.connect(db_name)
 #     cursor = conn.cursor()
 #
-#     # 检查 progress 表是否存在以及是否有数据
+#     #  progress 
 #     cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='progress'")
 #     table_exists = cursor.fetchone()
 #
 #     if not table_exists:
 #         conn.close()
-#         raise FileNotFoundError("数据库中没有进度表。")
+#         raise FileNotFoundError("")
 #
-#     # 检查 progress 表是否有记录
+#     #  progress 
 #     cursor.execute("SELECT agent_name, current_time, step_number, state FROM progress")
 #     rows = cursor.fetchall()
 #     if not rows:
 #         conn.close()
-#         raise FileNotFoundError("进度表为空，未找到任何保存的进度。")
+#         raise FileNotFoundError("")
 #
-#     # 加载进度记录
+#     # 
 #     agent_list = []
 #     current_time = None
 #     step_number = None

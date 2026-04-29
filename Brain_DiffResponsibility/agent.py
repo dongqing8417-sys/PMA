@@ -86,19 +86,19 @@ class Agent:
             pass
         else:
 
-            # 基本需求随时间减少
+            # 
             self.needs.fullness -= 0.04
             self.needs.energy -= 0.04
             self.needs.fun -= 0.04
             self.needs.social -= 0.04
 
-            # 需求值不能低于0
+            # 0
             self.needs.fullness = max(self.needs.fullness, 0)
             self.needs.energy = max(self.needs.energy, 0)
             self.needs.fun = max(self.needs.fun, 0)
             self.needs.social = max(self.needs.social, 0)
 
-            # 需求影响情感 (使用阈值触发+线性影响的混合策略)
+            #  (+)
             if self.needs.fullness < 0.4:
                 self.emotion.happiness -= 0.01 * (0.4 - self.needs.fullness)
                 self.emotion.anger += 0.015 * (0.4 - self.needs.fullness)
@@ -113,7 +113,7 @@ class Agent:
             if self.needs.social < 0.3:
                 self.emotion.sadness += 0.005 * (0.3 - self.needs.social)
 
-            # 情感间的相互影响 (使用线性影响)
+            #  ()
             if self.emotion.anger > 0.6:
                 self.emotion.happiness -= 0.01 * (self.emotion.anger - 0.6)
                 self.emotion.fear += 0.005 * (self.emotion.anger - 0.6)
@@ -121,7 +121,7 @@ class Agent:
             if self.emotion.sadness > 0.7:
                 self.emotion.happiness -= 0.01 * (self.emotion.sadness - 0.7)
 
-            # 确保情感数值在[0,1]范围内
+            # [0,1]
             self.emotion.happiness = round(max(0, min(1, self.emotion.happiness)),3)
             self.emotion.sadness = round(max(0, min(1, self.emotion.sadness)),3)
             self.emotion.anger = round(max(0, min(1, self.emotion.anger)),3)
@@ -138,7 +138,7 @@ class Agent:
         attempt = 0
         while attempt < max_retries:
             try:
-                # 如果旧位置不为空，则尝试移除旧位置中的智能体
+                # 
                 if self.old_pos != "":
                     old_position = map.find_location_by_agent(self.name)
                     if old_position and self.name in old_position.agents:
@@ -166,7 +166,7 @@ class Agent:
                 new_location = None
 
                 while new_location is None and attempt < max_attempts:
-                    # 查找新位置在地图中的节点
+                    # 
                     new_location = map.find_node_by_name(position)
 
                     if new_location:
@@ -182,13 +182,13 @@ class Agent:
                         logging.info(f"Attempt {attempt}: New location {position} not found in the map.")
                         print(f"Attempt {attempt}: New location {position} not found in the map.")
 
-                # 如果超过最大尝试次数仍然未找到位置，抛出异常
+                # 
                 if new_location is None:
                     logging.info(f"Error: New location {position} not found in the map after {max_attempts} attempts.")
                     print(f"Error: New location {position} not found in the map after {max_attempts} attempts.")
                     raise ValueError("New location not found after multiple attempts.")
 
-                # # 查找新位置在地图中的节点
+                # # 
                 # new_location = map.find_node_by_name(position)
                 #
                 # if new_location:
@@ -204,11 +204,11 @@ class Agent:
                 logging.info(f"Attempt {attempt + 1} failed with error: {e}")
                 print(f"Attempt {attempt + 1} failed with error: {e}")
                 attempt += 1
-                time.sleep(1)  # 等待一段时间后重试
+                time.sleep(1)  # 
 
         logging.info("Failed to update position after maximum retries.")
         print("Failed to update position after maximum retries.")
-        return None  # 或者返回一个默认值表示失败
+        return None  # 
 
     def update_pos2(self, position, map):
         if self.old_pos != "":
@@ -218,7 +218,7 @@ class Agent:
         self.old_pos = self.pos
         self.pos = position
 
-        # 查找新位置在地图中的节点
+        # 
         # new_location = map.find_node_by_name(position)
         # logging.info(f"new_location: {new_location}")
         # print("new_location:", new_location)
@@ -364,5 +364,5 @@ def start_conversation(agent1, agent2, relationship1, relationship2,interaction1
 # agent2.update_pos2("Li Hua's house", map)
 # agent_list.append(agent2)
 #
-# print("对话：")
+# print("")
 # start_conversation(agent1,agent2)

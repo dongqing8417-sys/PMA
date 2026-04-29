@@ -32,7 +32,7 @@ python main.py
 - `Brain_Cyberball`: Cyberball ostracism experiment and bystander-conformity extension
 - `Brain_DiffResponsibility`: diffusion of responsibility experiment and social-role extension
 - `Brain_town`: 8-agent daily life simulation in a small town
-- `绘图`: plotting scripts for thesis figures
+- `figures`: plotting scripts for thesis figures
 
 Each project is self-contained and includes its own:
 - `main.py` entry point
@@ -73,7 +73,7 @@ git push -u origin main
 
 ## Notes
 
-- The directory `心理学实验论文/` is local supporting material and is excluded from version control by the root `.gitignore`.
-- The `绘图/` directory is included as plotting code; generated image outputs are ignored.
+- Local PDF research materials are excluded from version control by the root `.gitignore`.
+- The `figures/` directory is included as plotting code; generated image outputs are ignored.
 - Runtime outputs such as `*.db`, `*.log`, caches, and local IDE files are also excluded.
 - If you want to run one experiment, enter that project directory and run its `main.py`.

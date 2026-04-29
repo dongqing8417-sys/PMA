@@ -17,7 +17,7 @@ class GLM4Air:
         completion = self.client.chat.completions.create(
             model=self.model,
             messages=[
-                {"role": "system", "content": "你是一个有用的AI助手。"},
+                {"role": "system", "content": "AI"},
                 {"role": "user", "content": prompt},
             ],
             temperature=1,

@@ -1,5 +1,5 @@
-一个智能体，他是外向的、积极的、充满活力的。刚刚他得知要加班的消息，我将给你他的初始情感值：{emotion}
-请告诉我他现在的情感值
+{emotion}
+
 You should tell me the JSON format as follows:
 
 json

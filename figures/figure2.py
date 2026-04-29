@@ -162,7 +162,7 @@
 #
 # # =========================================================
 # # ICC from framework-ratermean method
-# # （按你新上传的数据）
+# # 
 # # =========================================================
 # icc_data = {
 #     "Emotion": {
@@ -541,8 +541,8 @@
 #
 # ax_d.text(
 #     0.02, 0.04,
-#     # f"Framework-mean ICC(A,1) = {icc_single_min:.2f}–{icc_single_max:.2f}; "
-#     # f"ICC(A,k) = {icc_avg_min:.2f}–{icc_avg_max:.2f}",
+#     # f"Framework-mean ICC(A,1) = {icc_single_min:.2f}{icc_single_max:.2f}; "
+#     # f"ICC(A,k) = {icc_avg_min:.2f}{icc_avg_max:.2f}",
 #     f"ICC(2,k) > 0.8",
 #     transform=ax_d.transAxes,
 #     fontsize=8.0,
@@ -552,7 +552,7 @@
 # )
 #
 # # =========================================================
-# # e. Coherence–diversity landscape
+# # e. Coherencediversity landscape
 # # =========================================================
 # ax_e.axvline(4.0, ls="--", lw=1.0, color="#A9A9A9")
 # ax_e.axhline(4.0, ls="--", lw=1.0, color="#A9A9A9")
@@ -593,7 +593,7 @@
 # ax_e.set_xlabel("Behavioural diversity")
 # ax_e.set_ylabel("Coherence composite")
 # ax_e.grid(True, linestyle="--", alpha=0.20)
-# ax_e.set_title("e  Coherence–diversity landscape", loc="left", fontweight="bold", pad=6)
+# ax_e.set_title("e  Coherencediversity landscape", loc="left", fontweight="bold", pad=6)
 #
 # # =========================================================
 # # f. PMA gains over baselines
@@ -613,7 +613,7 @@
 #     height=bar_h,
 #     color="#CC466E",
 #     alpha=0.85,
-#     label="PMA − Base"
+#     label="PMA  Base"
 # )
 # ax_f.barh(
 #     y + bar_h / 2,
@@ -621,7 +621,7 @@
 #     height=bar_h,
 #     color="#3B84C3",
 #     alpha=0.85,
-#     label="PMA − Core"
+#     label="PMA  Core"
 # )
 #
 # ax_f.axvline(0, color="black", lw=0.9)
@@ -661,7 +661,7 @@
 #     for k in func_colors.keys()
 # ]
 #
-# # 先强制绘制，拿到准确坐标
+# # 
 # fig.canvas.draw()
 #
 # pos_a = ax_a.get_position()

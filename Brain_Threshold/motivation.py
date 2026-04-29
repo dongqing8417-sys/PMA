@@ -29,8 +29,8 @@ class ActionEval:
 
 def urgency(value: float, mode: str = "deficit") -> float:
     """
-    通用 urge 计算函数。
-    基础 needs 和 PSI needs 都走这里。
+     urge 
+     needs  PSI needs 
     """
     value = float(value)
     if value <= 0.5:
@@ -64,9 +64,9 @@ def merge_need_urges(
     psi_need_urges: Optional[Dict[str, float]] = None
 ) -> Dict[str, float]:
     """
-    合并基础 needs 和 PSI needs 的 urge，返回统一字典。
-    基础版只有 base_need_urges；
-    PSI 版则把两者合并。
+     needs  PSI needs  urge
+     base_need_urges
+    PSI 
     """
     merged = dict(base_need_urges)
     if psi_need_urges:
@@ -77,7 +77,7 @@ def merge_need_urges(
 # List
 def infer_motives(base_need_urges, psi_need_urges=None, top_k=2):
     """
-    从 need urges 聚合出 motives
+     need urges  motives
     """
     psi_need_urges = psi_need_urges or {}
 
@@ -142,7 +142,7 @@ def generate_actions_for_motive(
     n_actions: int = 3
 ) -> List[Dict[str, Any]]:
     """
-    针对单个 motive 生成候选动作，并返回动作的主观评估值：
+     motive 
     expected_reward, competence, cost
     """
     context = context or {}
@@ -217,9 +217,9 @@ def evaluate_action_for_motive(
     lambda_cost: float = 0.3
 ) -> ActionEval:
     """
-    针对某个 motive 评估某个 action。
-    这里默认 action 已经包含 expected_reward / competence / cost，
-    本函数主要负责读取、清洗并计算 score。
+     motive  action
+     action  expected_reward / competence / cost
+     score
     """
     context = context or {}
 
@@ -264,7 +264,7 @@ def rank_actions(
     lambda_cost: float = 0.3
 ) -> List[Dict[str, Any]]:
     """
-    聚合多个 motive 下的 action score，并返回排序结果。
+     motive  action score
     """
     context = context or {}
     ranked = []

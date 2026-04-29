@@ -4,12 +4,12 @@ I will provide you with the following information:
 
 Agent's bio: {agent_bio}
 Agents's location: {agent_location}
-What the agent has already completed today：{agent_finish_plan}
+What the agent has already completed today{agent_finish_plan}
 What the agent is supposed to do in the next 15 minutes: {agent_fifteen_plan}
-Agent's basic need（Range is from 0 to 1）: {agent_basic_need}
+Agent's basic needRange is from 0 to 1: {agent_basic_need}
 Agent's emotion (Range is from 0 to 1): {agent_emo}
 The other agent's information: {agent_agent}
-The interaction between the two in the past：{agent_interaction}
+The interaction between the two in the past{agent_interaction}
 The emotions displayed by the other agent: {agent_emo_expression}
 
 Note that it should be in line with reality and cannot have continuous conversations.

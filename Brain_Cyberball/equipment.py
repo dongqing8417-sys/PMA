@@ -50,7 +50,7 @@ class Equipments:
 
     def get_sibling_nodes(self):
         if not self.parent:
-            return []  # 根节点没有兄弟节点
+            return []  # 
         return [child for child in self.parent.children if child != self]
 
 device = {

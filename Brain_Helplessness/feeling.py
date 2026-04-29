@@ -29,7 +29,7 @@ class PAD:
             setattr(self, key, value)
 
     def map_to_octant(self):
-        # 定义八分体
+        # 
         octants = {
             (True, True, True): 'Exuberant',  # P+, A+, D+
             (True, True, False): 'Dependent',  # P+, A+, D-
@@ -41,20 +41,20 @@ class PAD:
             (False, False, False): 'Disdainful'  # P-, A-, D-
         }
 
-        # 确定当前PAD值的正负情况
+        # PAD
         P_pos = self.P > 0
         A_pos = self.A > 0
         D_pos = self.D > 0
 
-        # 根据PAD值的正负情况确定所在的八分体
+        # PAD
         current_octant = octants[(P_pos, A_pos, D_pos)]
 
         return current_octant
 
     def octant_intense(self):
-        # 计算PAD值的欧几里得距离作为强度值
+        # PAD
         distance = math.sqrt(self.P ** 2 + self.A ** 2 + self.D ** 2)
-        # 将强度值映射到0至1之间
+        # 01
         intensity = min(1.0, distance / math.sqrt(3))
         return intensity
 
@@ -133,11 +133,11 @@ class Emotion:
         self.model = model
 
     def to_string(self):
-        # 将Emotion对象转换为JSON字符串
+        # EmotionJSON
         return json.dumps(self.get_emotion())
 
     def to_dict(self):
-        # 将Emotion对象转换为字典
+        # Emotion
         return {
             "model": self.model,
             "happiness": self.happiness,
@@ -150,13 +150,13 @@ class Emotion:
 
     @classmethod
     def from_string(cls, emotion_str):
-        # 将JSON字符串转换为Emotion对象
+        # JSONEmotion
         emotion_dic = json.loads(emotion_str)
         return cls(**emotion_dic)
 
     @classmethod
     def from_dict(cls, emotion_dic):
-        # 将字典转换为 Emotion 对象
+        #  Emotion 
         return cls(**emotion_dic)
 
     def get_emotion(self):
@@ -180,7 +180,7 @@ class Emotion:
         filled_prompt = prompt.to_string(params)
         # response = LLMs("spark-pro", filled_prompt).ask()
         # response = response.replace("'","\"")
-        # emotion_dic = json.loads(response)  # 字符串转换为字典
+        # emotion_dic = json.loads(response)  # 
         # print("emotion:",emotion_dic)
         # return emotion_dic
 
@@ -190,11 +190,11 @@ class Emotion:
             response = response.replace("'", "\"")
 
             try:
-                emotion_dic = json.loads(response)  # 将响应解析为字典
+                emotion_dic = json.loads(response)  # 
                 # logging.info("emotion:", emotion_dic)
                 # print("emotion:", emotion_dic)
 
-                # 直接使用字典创建 Emotion 对象
+                #  Emotion 
                 emotion_dic["model"] = self.model
                 new_emotion = self.from_dict(emotion_dic)
                 return new_emotion
@@ -202,13 +202,13 @@ class Emotion:
                 logging.info(f"Attempt {attempt + 1} failed with error: {e}")
                 print(f"Attempt {attempt + 1} failed with error: {e}")
                 if attempt < max_attempts - 1:
-                    time.sleep(1)  # 可选：等待一段时间后重试
+                    time.sleep(1)  # 
                 else:
                     logging.info("All attempts to decode the JSON have failed. Exiting.")
                     print("All attempts to decode the JSON have failed. Exiting.")
                     return None
 
-    # 情绪增量
+    # 
     def emotion_intense(self, new_emotion, old_emotion):
         intense_dict = {}
         #old_emotion =self.get_emotion()
@@ -233,12 +233,12 @@ class Emotion:
 #         self.previous_needs = {"fullness": self.fullness, "fun": self.fun, "health": self.health, "social":self.social, "energy":self.energy}
 #
 #     def to_string(self):
-#         # 将BasicNeed对象转换为JSON字符串
+#         # BasicNeedJSON
 #         return json.dumps(self.get_basic_need())
 #
 #     @classmethod
 #     def from_string(cls, basic_need_str):
-#         # 将JSON字符串转换为BasicNeed对象
+#         # JSONBasicNeed
 #         basic_need_dic = json.loads(basic_need_str)
 #         return cls(**basic_need_dic)
 #
@@ -259,7 +259,7 @@ class Emotion:
 #     #     fill_prompt = prompt.to_string(params)
 #     #     # response = LLMs("spark-pro", fill_prompt).ask()
 #     #     # response = response.replace("'", "\"")
-#     #     # basic_need_dic = json.loads(response)  # 字符串转换为字典
+#     #     # basic_need_dic = json.loads(response)  # 
 #     #     # print("basic need:", basic_need_dic)
 #     #     # return basic_need_dic
 #     #
@@ -269,14 +269,14 @@ class Emotion:
 #     #         response = response.replace("'", "\"")
 #     #
 #     #         try:
-#     #             basic_need_dic = json.loads(response)  # 尝试将字符串转换为字典
+#     #             basic_need_dic = json.loads(response)  # 
 #     #             print("basic needs:", basic_need_dic)
 #     #             self.correction_function(event)
 #     #             return basic_need_dic
 #     #         except json.JSONDecodeError as e:
 #     #             print(f"Attempt {attempt + 1} failed with error: {e}")
 #     #             if attempt < max_attempts - 1:
-#     #                 time.sleep(1)  # 可选：等待一段时间后重试
+#     #                 time.sleep(1)  # 
 #     #             else:
 #     #                 print("All attempts to decode the JSON have failed. Exiting.")
 #     #                 return None
@@ -297,22 +297,22 @@ class Emotion:
 #             response = response.replace("'", "\"")
 #
 #             try:
-#                 basic_need_dic = json.loads(response)  # 尝试将字符串转换为字典
+#                 basic_need_dic = json.loads(response)  # 
 #                 print("basic needs:", basic_need_dic)
 #
-#                 # 直接赋值到对象属性
+#                 # 
 #                 self.fullness = basic_need_dic.get("fullness", self.fullness)
 #                 self.fun = basic_need_dic.get("fun", self.fun)
 #                 self.health = basic_need_dic.get("health", self.health)
 #                 self.social = basic_need_dic.get("social", self.social)
 #                 self.energy = basic_need_dic.get("energy", self.energy)
-#                 self.correction_function(event)  # 调用修正函数
+#                 self.correction_function(event)  # 
 #
 #                 return basic_need_dic
 #             except json.JSONDecodeError as e:
 #                 print(f"Attempt {attempt + 1} failed with error: {e}")
 #                 if attempt < max_attempts - 1:
-#                     time.sleep(1)  # 可选：等待一段时间后重试
+#                     time.sleep(1)  # 
 #                 else:
 #                     print("All attempts to decode the JSON have failed. Exiting.")
 #                     return None
@@ -322,7 +322,7 @@ class Emotion:
 #             setattr(self, key, value)
 #
 #     def calculate_decrease(self):
-#         """计算各个基本需求的减幅。"""
+#         """"""
 #         decreases = {}
 #         current_needs = self.get_basic_need()
 #         for key in current_needs:
@@ -332,7 +332,7 @@ class Emotion:
 #
 #     def correction_function(self, activity, threshold=0.3):
 #         """
-#         检查减幅是否超过阈值，如果是，则触发指定函数。
+#         
 #         """
 #         correction = False
 #         current_needs = self.get_basic_need()
@@ -342,17 +342,17 @@ class Emotion:
 #                 correction = True
 #                 prompt = "Please simulate a character whose" + key + " range is set to [0,1]. His/Her " + key + " value just now was " + str(self.previous_needs[key]) + " , and after experiencing the activity: " + activity + " , his fullness value changed to " + str(current_needs[key]) + " . Is this reasonable? If reasonable, please return the original value; If it is unreasonable, please return the modified value. Just return numbers, no other text required"
 #                 response = LLMs(self.model, prompt).ask()
-#                 print("修改的需求是", key)
-#                 print("key修改前：")
+#                 print("", key)
+#                 print("key")
 #                 print(self.get_basic_need()[key])
 #                 self.key = float(response)
 #                 print("response:",response)
-#                 print("key修改后：")
+#                 print("key")
 #                 print(self.get_basic_need()[key])
 #         if correction:
-#             print("之前：")
+#             print("")
 #             print(self.previous_needs)
-#             print("修改过后：")
+#             print("")
 #             print(self.get_basic_need())
 
 class BasicNeed:
@@ -367,12 +367,12 @@ class BasicNeed:
                                "energy": self.energy}
 
     def to_string(self):
-        # 将BasicNeed对象转换为JSON字符串
+        # BasicNeedJSON
         return json.dumps(self.get_basic_need())
 
     @classmethod
     def from_string(cls, basic_need_str):
-        # 将JSON字符串转换为BasicNeed对象
+        # JSONBasicNeed
         basic_need_dic = json.loads(basic_need_str)
         return cls(**basic_need_dic)
 
@@ -426,15 +426,15 @@ class BasicNeed:
             #response = response.replace("'", "\"")
 
             try:
-                #basic_need_dic = json.loads(response)  # 将字符串转换为字典
+                #basic_need_dic = json.loads(response)  # 
                 #logging.info("basic needs:", basic_need_dic)
 
-                # 直接将字典转换为 BasicNeed 对象
+                #  BasicNeed 
                 basic_need_dic = response
                 basic_need_dic["model"] = self.model
                 new_basic_need = self.from_dict(basic_need_dic)
 
-                # 更新当前对象的属性
+                # 
                 self.modify_certain_need(
                     fullness=new_basic_need.fullness,
                     fun=new_basic_need.fun,
@@ -443,20 +443,20 @@ class BasicNeed:
                     energy=new_basic_need.energy
                 )
 
-                self.correction_function(event)  # 调用修正函数
-                return new_basic_need  # 返回 BasicNeed 对象
+                self.correction_function(event)  # 
+                return new_basic_need  #  BasicNeed 
             except json.JSONDecodeError as e:
                 logging.info(f"Attempt {attempt + 1} failed with error: {e}")
                 print(f"Attempt {attempt + 1} failed with error: {e}")
                 if attempt < max_attempts - 1:
-                    time.sleep(1)  # 可选：等待一段时间后重试
+                    time.sleep(1)  # 
                 else:
                     logging.info("All attempts to decode the JSON have failed. Exiting.")
                     print("All attempts to decode the JSON have failed. Exiting.")
                     return None
 
     def calculate_decrease(self):
-        """计算各个基本需求的减幅。"""
+        """"""
         decreases = {}
         current_needs = self.get_basic_need()
         for key in current_needs:
@@ -466,7 +466,7 @@ class BasicNeed:
 
     def correction_function(self, activity, threshold=0.1):
         """
-        检查减幅是否超过阈值，如果是，则触发指定函数。
+        
         """
         correction = False
         current_needs = self.get_basic_need()
@@ -481,18 +481,18 @@ class BasicNeed:
                 )
                 response = LLMs(self.model, prompt).ask()
                 # logging.info("response:", response)
-                # logging.info("修改的需求是", key)
-                # logging.info(f"{key}修改前的值：{self.get_basic_need()[key]}")
+                # logging.info("", key)
+                # logging.info(f"{key}{self.get_basic_need()[key]}")
 
-                # 更新相应需求
+                # 
                 try:
                     new_value = float(response.strip())
                     setattr(self, key, new_value)
-                    # logging.info(f"{key} 修改后的值：{getattr(self, key)}")
+                    # logging.info(f"{key} {getattr(self, key)}")
                     # logging.info("basic needs:", self.get_basic_need())
                     # print("basic needs:", self.get_basic_need())
                 except ValueError:
-                    logging.info(f"无法解析模型的响应：{response}")
+                    logging.info(f"{response}")
                     print("basic needs:", self.get_basic_need())
 
         # if not correction:
@@ -500,9 +500,9 @@ class BasicNeed:
         #     print("basic needs:", self.get_basic_need())
 
         # if correction:
-        #     logging.info("之前：")
+        #     logging.info("")
         #     logging.info(self.previous_needs)
-        #     logging.info("修改过后：")
+        #     logging.info("")
         #     logging.info(self.get_basic_need())
 
 
@@ -525,7 +525,7 @@ class BasicNeed:
 
 import json
 
-# 示例字符串格式JSON数据
+# JSON
 json_string = """
 {
 'happiness': 0.5,

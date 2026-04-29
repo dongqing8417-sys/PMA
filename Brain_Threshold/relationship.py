@@ -21,7 +21,7 @@ class Relationship:
                 relationship_type TEXT,
                 intimacy_level INTEGER,
                 impression TEXT,
-                date DATE DEFAULT (DATE('now')),  -- 添加 date 字段，默认是当前日期
+                date DATE DEFAULT (DATE('now')),  --  date 
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
             ''')
@@ -38,14 +38,14 @@ class Relationship:
                 other_agent_name TEXT,
                 interaction_content TEXT,
                 interaction_type TEXT,
-                date DATE DEFAULT (DATE('now')),  -- 添加 date 字段，默认是当前日期
+                date DATE DEFAULT (DATE('now')),  --  date 
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (relationship_id) REFERENCES Relationships(id)
                 )
             ''')
             conn.commit()
 
-    # 封装数据库连接
+    # 
     def _get_connection(self):
         return sqlite3.connect(self.db_name)
 
@@ -95,7 +95,7 @@ class Relationship:
             cursor.execute(query, params)
             relationships = cursor.fetchall()
 
-            # 如果没有检索到关系，返回陌生人信息
+            # 
             if not relationships:
                 return None
 
@@ -109,39 +109,39 @@ class Relationship:
             params = []
             conditions = []
 
-            # 根据 relationship_id 添加筛选条件
+            #  relationship_id 
             if relationship_id:
                 conditions.append('relationship_id = ?')
                 params.append(relationship_id)
 
-            # 根据 agent_name 添加筛选条件
+            #  agent_name 
             if agent_name:
                 conditions.append('agent_name = ?')
                 params.append(agent_name)
 
-            # 根据 other_agent_name 添加筛选条件
+            #  other_agent_name 
             if other_agent_name:
                 conditions.append('other_agent_name = ?')
                 params.append(other_agent_name)
 
-            # 根据 interaction_type 添加筛选条件
+            #  interaction_type 
             if interaction_type:
                 conditions.append('interaction_type = ?')
                 params.append(interaction_type)
 
-            # 如果有条件，则添加 WHERE 子句
+            #  WHERE 
             if conditions:
                 query += ' WHERE ' + ' AND '.join(conditions)
 
-            # 添加 ORDER BY 子句
+            #  ORDER BY 
             query += ' ORDER BY timestamp DESC'
 
-            # 根据 limit 添加限制
+            #  limit 
             if limit:
                 query += ' LIMIT ?'
                 params.append(limit)
 
-            # 执行查询
+            # 
             cursor.execute(query, params)
             return cursor.fetchall()
 
@@ -238,7 +238,7 @@ class Relationship:
             return cursor.fetchone() is not None
 
     def print_all_interactions(self):
-        interactions = self.retrieve_interactions()  # 获取所有交互记录
+        interactions = self.retrieve_interactions()  # 
         if not interactions:
             logging.info("No interactions found.")
             print("No interactions found.")
@@ -268,10 +268,10 @@ class Relationship:
 
     def delete_interactions_by_time(self, time_point):
         """
-        删除所有 timestamp 小于给定时间点的 interaction 记录。
+         timestamp  interaction 
 
-        参数：
-        time_point (str): 指定的时间点，格式为 'YYYY-MM-DD HH:MM:SS'。
+        
+        time_point (str):  'YYYY-MM-DD HH:MM:SS'
         """
         if isinstance(time_point,str):
             current_time_str = time_point
@@ -289,11 +289,11 @@ class Relationship:
 
 class NewRelationship:
     def __init__(self):
-        # 使用字典存储每个智能体对其他智能体的初始印象
+        # 
         self.relationships = {
             'Zhao Chun': {
                 'Zhao Qi': 'My younger brother; we often share meals and conversations.',
-                'Qian Xia': 'She runs the café; friendly but her new ideas are sometimes too modern for me.',
+                'Qian Xia': 'She runs the caf; friendly but her new ideas are sometimes too modern for me.',
                 'Sun Qiu': 'She is a regular customer; she often buys ingredients from my shop.',
                 'Li Dong': 'A reliable doctor; we occasionally discuss health and community matters.',
                 'Zhou Qin': 'She manages the park; always energetic when we cross paths during my walks.'
@@ -302,22 +302,22 @@ class NewRelationship:
                 'Zhou Qin': 'My cousin and close friend; we often share ideas and support each other.',
                 'Zhao Chun': 'A reliable shop owner; we occasionally discuss business matters.',
                 'Sun Qiu': 'She runs the restaurant; I respect her work but sense some tension between us.',
-                'Li Dong': "He criticizes my café for not aligning with his strict health views; it's affecting my business.",
+                'Li Dong': "He criticizes my caf for not aligning with his strict health views; it's affecting my business.",
                 'Zhao Qi': 'He always declines my event invitations; seems distant but I hope he joins us someday.',
-                'Wang Hua': 'A newcomer; she visited my café once. She seems quiet and thoughtful.'
+                'Wang Hua': 'A newcomer; she visited my caf once. She seems quiet and thoughtful.'
             },
             'Sun Qiu': {
                 'Li Dong': 'My husband; he supports me both personally and professionally.',
-                'Qian Xia': 'She runs the café that attracts some of my customers; I am cautious about her modern approaches.',
+                'Qian Xia': 'She runs the caf that attracts some of my customers; I am cautious about her modern approaches.',
                 'Zhao Chun': 'A reliable shop owner; I often purchase ingredients from his store.',
                 'Zhou Qin': 'She manages the park; we have met a few times during community events.',
-                'Zhao Qi': 'I don’t know much about him; he is the librarian.'
+                'Zhao Qi': 'I dont know much about him; he is the librarian.'
             },
             'Li Dong': {
                 'Sun Qiu': 'My wife; she works very hard in her business, and I always support her.',
-                'Qian Xia': 'She promotes unhealthy habits at her café; we disagreed over community health practices.',
+                'Qian Xia': 'She promotes unhealthy habits at her caf; we disagreed over community health practices.',
                 'Zhou Qin': 'She manages the park where I run; we often talk about health and the environment.',
-                'Zhao Qi': 'We don’t interact much; I know he is the librarian.',
+                'Zhao Qi': 'We dont interact much; I know he is the librarian.',
                 'Zheng Shu': 'A new resident; he visited the clinic recently, seems a bit anxious.',
                 'Zhao Chun': 'A reliable shop owner; we occasionally discuss health and community matters.'
             },
@@ -332,9 +332,9 @@ class NewRelationship:
             'Zhao Qi': {
                 'Zhao Chun': 'My older brother; despite our different personalities, we support each other and often share meals and discuss life.',
                 'Zhou Qin': 'The park administrator; we often discuss literature and philosophy. She is one of the few who understand my thoughts.',
-                'Qian Xia': 'She often invites me to her café events; I find them too crowded and prefer to stay away.',
+                'Qian Xia': 'She often invites me to her caf events; I find them too crowded and prefer to stay away.',
                 'Li Dong': 'The town doctor; we have little interaction and just know of each other.',
-                'Sun Qiu': 'The restaurant owner; I don’t know much about her, just that she runs the restaurant in town.',
+                'Sun Qiu': 'The restaurant owner; I dont know much about her, just that she runs the restaurant in town.',
                 'Wang Hua': 'A newcomer; she has a strong interest in literature. We recently started discussing books in the park.',
                 'Zheng Shu': 'A new resident; he visited the library to borrow books. He seems interested in science fiction.'
             },
@@ -347,14 +347,14 @@ class NewRelationship:
                 'Zhao Qi': 'The town librarian; we met in the park and started discussing literature and books.',
                 'Zhou Qin': 'The park administrator; she is friendly and helped me adapt to town life.',
                 'Zheng Shu': 'Another newcomer; we met near my house and often share our feelings about adapting to the new environment.',
-                'Qian Xia': 'The café owner; I visit her café once. She is always busy but friendly.'
+                'Qian Xia': 'The caf owner; I visit her caf once. She is always busy but friendly.'
             }
         }
 
     def get_initial_impression(self, person1, person2):
-        """返回 person1 对 person2 的初始印象，如果不存在则返回 'No initial impression available.'"""
+        """ person1  person2  'No initial impression available.'"""
         return self.relationships.get(person1, {}).get(person2, "Don't know him/her.")
-# # # 打开已有的LiHua的朋友表
+# # # LiHua
 # zhangsan_relationships = Relationship("zhangsan")
 # r = zhangsan_relationships.retrieve_relationships(name ="Li Hua")
 # logging.info(zhangsan_relationships.format_relationship(r))
@@ -364,15 +364,15 @@ class NewRelationship:
 #
 #
 # lihua_relationships = Relationship("lihua")
-# # 检索并打印更新前的关系信息
+# # 
 # r = lihua_relationships.retrieve_relationships(name="Zhang San")
 # logging.info("Before update:", lihua_relationships.format_relationship(r))
-# # 更新 impression 信息
+# #  impression 
 # lihua_relationships.update_relationship(
 #     relationship_name="Zhang San",
 #     impression="She is very intelligent and dedicated to her research. I enjoy chatting with her"
 # )
-# # 重新检索并打印更新后的关系信息
+# # 
 # r = lihua_relationships.retrieve_relationships(name="Zhang San")
 # logging.info("After update:", lihua_relationships.format_relationship(r))
 #

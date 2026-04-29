@@ -1,13 +1,14 @@
 # Local research materials
-心理学实验论文/
+*.pdf
+local_research_materials/
 
 # Generated plotting outputs
-绘图/*.png
-绘图/*.jpg
-绘图/*.jpeg
-绘图/*.pdf
-绘图/*.svg
-绘图/outputs/
+figures/*.png
+figures/*.jpg
+figures/*.jpeg
+figures/*.pdf
+figures/*.svg
+figures/outputs/
 
 # Environment and secrets
 .env

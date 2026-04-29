@@ -4,7 +4,7 @@ I will provide you with the following information:
 
 Agent's bio: {agent_bio}
 The other agent's information: {agent_other}
-Your past interactions：{agent_interaction}
+Your past interactions{agent_interaction}
 The emotions displayed by the other agent: {agent_emo_expression}
 Dialogue history: {agent_history}
 The current plan: {agnt_plan}

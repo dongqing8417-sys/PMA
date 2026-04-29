@@ -1,4 +1,4 @@
-Please summarize the agent's daily activities by combining and generalizing similar actions。
+Please summarize the agent's daily activities by combining and generalizing similar actions
 Provide a formatted list where each item summarizes multiple similar activities in the format:
 
 I will provide you with the following information:

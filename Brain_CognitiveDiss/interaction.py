@@ -84,9 +84,9 @@ class Interaction:
             if response.translate(str.maketrans('', '', string.punctuation)).strip()[-3:] == 'Bye':
                 return history
 
-    # 检查是否达成一致
-    # 成功返回["name1: XXXXX with name2", "name2: XXXXX with name1"]
-    # 失败返回提出建议者的名字
+    # 
+    # ["name1: XXXXX with name2", "name2: XXXXX with name1"]
+    # 
     def check_agreement(self, other_agent, history,time):
         prompt = Prompt("check_agreement")
         params = {
@@ -104,7 +104,7 @@ class Interaction:
             agent.has_processed = True
             return True
 
-        else:  # 如果对方拒绝了邀请，那么重新生成计划，fifteen_plan已更新
+        else:  # fifteen_plan
             if response == self.agent.name:
                 rejected_agent = self.agent
                 rejecting_agent = agent
@@ -128,8 +128,8 @@ class Interaction:
             event = f"Your previous plan was: {rejected_agent.fifteen_plan}, but the other agent declined your invitation."
 
             # Logging and printing the original emotion of the rejected agent
-            logging.info(f"原本 {rejected_agent.name} 的 emotion:")
-            print(f"原本 {rejected_agent.name} 的 emotion:")
+            logging.info(f" {rejected_agent.name}  emotion:")
+            print(f" {rejected_agent.name}  emotion:")
             logging.info(rejected_agent.emotion.get_emotion())
             print(rejected_agent.emotion.get_emotion())
 
@@ -138,12 +138,12 @@ class Interaction:
             rejected_agent.update_emo_expression()
 
             # Logging and printing the emotion after invitation rejection
-            logging.info("对方拒绝邀请后的 emotion:")
-            print("对方拒绝邀请后的 emotion:")
+            logging.info(" emotion:")
+            print(" emotion:")
             logging.info(rejected_agent.emotion.get_emotion())
             print(rejected_agent.emotion.get_emotion())
 
-            # 将拒绝这件事加入记忆
+            # 
             mem_dic = rejected_agent.memory.arrange_memory(rejected_agent, event)
             while "type" not in mem_dic or "importance" not in mem_dic or "feeling" not in mem_dic:
                 mem_dic = rejected_agent.memory.arrange_memory(rejected_agent, event)
@@ -153,8 +153,8 @@ class Interaction:
             event = f"You declined {rejected_agent.name}'s invitation. His/Her plan was: {rejected_agent.fifteen_plan}"
 
             # Logging and printing the original emotion of the rejecting agent
-            logging.info(f"原本 {rejecting_agent.name} 的 emotion:")
-            print(f"原本 {rejecting_agent.name} 的 emotion:")
+            logging.info(f" {rejecting_agent.name}  emotion:")
+            print(f" {rejecting_agent.name}  emotion:")
             logging.info(rejecting_agent.emotion.get_emotion())
             print(rejecting_agent.emotion.get_emotion())
 
@@ -163,8 +163,8 @@ class Interaction:
             rejecting_agent.update_emo_expression()
 
             # Logging and printing the emotion after declining the invitation
-            logging.info("拒绝邀请后的 emotion:")
-            print("拒绝邀请后的 emotion:")
+            logging.info(" emotion:")
+            print(" emotion:")
             logging.info(rejecting_agent.emotion.get_emotion())
             print(rejecting_agent.emotion.get_emotion())
 
